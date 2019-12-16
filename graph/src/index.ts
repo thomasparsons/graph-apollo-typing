@@ -1,9 +1,9 @@
-import typeResolvers from "./resolvers/index"
-import typeDefinitions from "./schema/index"
+import typeResolvers from "./resolvers/index" // eslint-disable-line
+import typeDefinitions from "./schema/index" // eslint-disable-line
 
 const { ApolloServer } = require("apollo-server")
 
-const { PORT = 3000 } = process.env
+const { PORT = 3001 } = process.env
 
 const server = new ApolloServer({
   context: ({ req }: any) => {

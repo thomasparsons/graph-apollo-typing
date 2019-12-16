@@ -1,9 +1,0 @@
-type Query {
-  myDataExample(): MyDataExample
-}
-
-type MyDataExample {
-  aString: String
-  aBoolean: Boolean
-}
-

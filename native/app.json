@@ -1,9 +1,9 @@
 {
-  "name": "What Went Well",
-  "displayName": "What Went Well",
+  "name": "Toms typing app",
+  "displayName": "Toms typing app",
   "expo": {
-    "name": "whatwentwell",
-    "slug": "whatwentwell",
+    "name": "toms-typing-app",
+    "slug": "toms-typing-app",
     "privacy": "unlisted",
     "sdkVersion": "35.0.0",
     "version": "1.0.0",
@@ -13,11 +13,6 @@
       "android",
       "web"
     ],
-    "description": "What Went Well",
-    "splash": {
-      "backgroundColor": "#FAE2DA",
-      "image": "./assets/splash-full.png",
-      "resizeMode": "contain"
-    }
+    "description": "A react application for working on graphql typing"
   }
 }

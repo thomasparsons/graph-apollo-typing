@@ -1,35 +1,23 @@
-import * as Font from "expo-font"
 import React, { Component } from "react"
-import {Provider} from "react-redux"
+import { createAppContainer } from "react-navigation";
+import { createStackNavigator } from "react-navigation-stack";
 
-import {store} from "./src/Data/store"
-import {LoginLoadingScreen} from "./src/Screens"
-import Routes from "./src/Screens/Routes"
+import Screen from "./src/Screens/Screen"
+import Provider from "./src/Data/Provider"
 
-interface State {
-  fontLoaded: boolean,
-  loggingIn: boolean
-}
-
-class App extends Component<{}, State> {
-  public state: State = {
-    fontLoaded: false,
-    loggingIn: false
+const AppNavigator = createStackNavigator({
+  Screen: {
+    screen: Screen
   }
+})
 
-  public async componentDidMount () {
-    await Font.loadAsync({
-      overpass: require("./assets/fonts/Overpass/Overpass-Regular.ttf")
-    })
-    this.setState({ fontLoaded: true })
-  }
+const AppContainer = createAppContainer(AppNavigator)
 
+class App extends Component {
   public render() {
-    const {fontLoaded} = this.state
-
     return (
-      <Provider store={store}>
-        {fontLoaded ? <Routes /> : <LoginLoadingScreen />}
+      <Provider>
+        <AppContainer />
       </Provider>
     )
   }

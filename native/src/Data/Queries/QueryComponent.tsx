@@ -1,29 +1,20 @@
+import React from "react"
+import { Text } from "react-native"
 import { QueryOptions, useQuery } from "@apollo/react-hooks"
-import React, { ReactNode } from "react"
-
-import Error from "../../Components/UI/Error"
-import { Para } from "../../Components/UI/Text"
 
 interface Props extends QueryOptions {
   // tslint:disable-next-line
-  children: (data: any) => any,
-  LoadingComponent?: ReactNode
+  children: (data: any) => any
 }
 
-function QueryComponent({
-  children, LoadingComponent, query, variables
-}: Props) {
+function QueryComponent({ children, query, variables }: Props) {
   const { loading, error, data } = useQuery(query, { variables })
   if (loading) {
-    if (LoadingComponent) {
-      return LoadingComponent
-    }
-
-    return <Para center>Loading...</Para>
+    return <Text>Loading...</Text>
   }
 
   if (error) {
-    return <Error text="Error :(" />
+    return <Text>Error</Text>
   }
 
   return children({ ...data })

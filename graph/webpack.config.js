@@ -1,15 +1,15 @@
 const path = require("path")
 const nodeExternals = require("webpack-node-externals")
 
-const {NODE_ENV = "development"} = process.env
+const { NODE_ENV = "development" } = process.env
 
 module.exports = {
   entry: "./src/index.ts",
   externals: [
     nodeExternals(),
     nodeExternals({
-      modulesDir: path.resolve(__dirname, '../node_modules'),
-    }),
+      modulesDir: path.resolve(__dirname, "../node_modules")
+    })
   ],
   mode: NODE_ENV,
   target: "node",
@@ -18,20 +18,17 @@ module.exports = {
     path: NODE_ENV === "development" ? path.resolve(__dirname, "build") : path.resolve(__dirname, "../build")
   },
   resolve: {
-    extensions: [".ts", ".js"],
+    extensions: [".ts", ".js"]
   },
   module: {
     rules: [
       {
         test: /\.ts$/,
-        use: ["ts-loader"],
+        use: ["ts-loader"]
       }, {
-        test: /\.txt$/i,
-        use: "raw-loader",
-      }, {
-        test: /\.graphql$/,
+        test: /\.(graphql|gql)$/,
         exclude: /node_modules/,
-        loader: 'graphql-tag/loader',
+        loader: "graphql-tag/loader"
       }
     ]
   }

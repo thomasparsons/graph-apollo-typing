@@ -1,8 +1,0 @@
-export { default as Button } from "./Button"
-export { default as Emoji } from "./Emoji"
-export { default as Error } from "./Error"
-export { default as Footer } from "./Footer"
-export { default as Header } from "./Header"
-export { default as LoadingText } from "./LoadingText"
-export { default as Modal } from "./Modal"
-export { default as theme } from "./theme"

@@ -12,4 +12,4 @@ yarn-error.log
 
 build/*
 
-*.d.ts
+*index.d.ts

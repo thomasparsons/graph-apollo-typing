@@ -1,8 +1,30 @@
 const resolvers = {
   Query: {
-    myDataExample: () => { return {
-
-    } }
+    getDogs: () => {
+      return {
+        dogs: [{
+          dogInfo: {
+            age: 5,
+            name: "Rover"
+          }
+        }, {
+          dogInfo: {
+            age: 1,
+            name: "Jack"
+          }
+        }, {
+          dogInfo: {
+            age: 4,
+            name: "Max"
+          }
+        }, {
+          dogInfo: {
+            age: 12,
+            name: "Rex"
+          }
+        }]
+      }
+    }
   }
 }
 

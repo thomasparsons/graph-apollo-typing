@@ -25,12 +25,13 @@ module.exports = {
     sourceType: "module",
   },
   plugins: [
-    "react",
     "@typescript-eslint",
+    "graphql",
     "import",
-    "graphql"
+    "react",
   ],
   rules: {
+    camelcase: 0,
     quotes: ["error", "double"],
     semi: ["error", "never"],
     "comma-dangle": ["error", "never"],
@@ -48,9 +49,10 @@ module.exports = {
       "ignoreRestSiblings": false
     }],
 
-    "graphql/template-strings": ['error', {
-      env: 'apollo',
+    "graphql/template-strings": ["error", {
+      env: "apollo",
       schemaJson: require('./generated/schema.json'),
+      tagName: "gql"
     }]
   },
 

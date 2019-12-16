@@ -1,0 +1,16 @@
+type Query {
+  getDogs: Dogs
+}
+
+type Dogs {
+  dogs: [Dog]
+}
+
+type Dog {
+  dogInfo: DogInfo
+}
+
+type DogInfo {
+  name: String!
+  age: Int
+}
